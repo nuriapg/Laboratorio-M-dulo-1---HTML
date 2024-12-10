@@ -1,0 +1,279 @@
+/* Configuración */
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Barra de navegación */
+.navbar {
+    background-color: #ffffff;
+    border-bottom: 1px solid #2c2b2b;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+/* Contenedor del menú */
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 32px;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+/* Enlaces de navegación */
+.nav-links {
+    display: flex;
+    gap: 8px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    flex-wrap: nowrap;          /* Evitar que los enlaces se ajusten en varias líneas */
+}
+
+.nav-links a {
+    color: #000;                /* Color negro para los enlaces */
+    text-decoration: none;      /* Eliminar el subrayado */
+    font-size: 16px;            /* Tamaño de fuente */
+    padding: 8px 16px;          /* Espaciado interno para hacer clic más fácilmente */
+    white-space: nowrap;        /* Evitar que el texto se divida en varias líneas */
+    transition: color 0.3s;     /* Transición suave para el color */
+}
+
+/* Efecto hover: al pasar el ratón */
+.nav-links a:hover {
+    color: #555;                /* Color gris oscuro al pasar el ratón */
+}
+
+/* Efecto active: enlace activo */
+.nav-links a:active {
+    color: #82807f;             /* Color rojo tomate para el enlace activo */
+}
+
+/* Efecto focus: al hacer clic o tabular */
+.nav-links a:focus {
+    outline: none;              /* Eliminar el borde por defecto del navegador */
+    background-color: #f0f0f0;  /* Fondo gris claro al enfocar */
+}
+
+/* Iconos de usuario, favoritos y carrito */
+.nav-icons {
+    display: flex;
+    gap: 38px;
+    flex-shrink: 0;             /* Evitar que los iconos se reduzcan */
+}
+
+.nav-icons img {
+    width: 24px;
+    height: 24px;
+}
+
+/* Icono de menú hamburguesa */
+.menu-icon img {
+    width: 32px;
+    height: 32px;
+}
+
+/* Título principal */
+.title {
+    max-width: 100%; 
+    margin-top: 100px;
+    margin-left: 32px;
+    margin-right: 32px;
+    font-size: 32px;
+    text-align:left;
+    font-weight: bold;
+    white-space: nowrap;        /* Evitar que el texto se divida en varias líneas */
+}
+
+/* Galería */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    place-items: center;                   /* Centrar elementos horizontal y verticalmente */
+    gap: 24px;
+    padding: 32px;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.gallery-item {
+    text-align: center;
+    border: 1px solid #fdfdfd;
+    border-radius: 8px;
+    padding: 16px;
+    background-color: #fff;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 16px;
+}
+
+.item-info {
+    display: flex;
+    justify-content: space-between; /* Nombre a la izquierda y precio a la derecha */
+    align-items: center;
+    font-size: 16px;
+    padding: 8px 0;                /* Espacio entre la imagen y la información */
+    margin-top: 16px;              /* Margen superior respecto a la imagen */
+}
+
+.item-info .product-name {
+    font-weight: normal;           /* Tipografía regular para el nombre */
+    color: #333;                   /* Color opcional para el nombre */
+    margin: 0;                     /* Eliminar margen predeterminado */
+}
+
+.item-info .price {
+    font-weight: bold;             /* Precio en negrita */
+    color: #000;                   /* Color opcional para el precio */
+    margin: 0;                     /* Eliminar margen predeterminado */
+}
+
+/* Footer global */
+.footer {
+    background-color: #1a1a1a;      /* Color de fondo oscuro */
+    color: #fff;                    /* Color del texto blanco */
+    display: flex;
+    justify-content: space-around;  /* Distribuir los elementos horizontalmente */
+    align-items: center;            /* Centrar verticalmente */
+    padding: 24px 16px;             /* Espaciado interno */
+    flex-wrap: wrap;                /* Permite que los elementos se ajusten en varias líneas si es necesario */
+}
+
+/* Cada elemento del footer */
+.footer-item {
+    display: flex;
+    align-items: center;           /* Centrar icono y texto verticalmente */
+    gap: 16px;                     /* Espacio entre el icono y el texto */
+    font-size: 16px;               /* Tamaño del texto */
+}
+
+/* Contenedor del icono para darle tamaño y forma circular */
+.footer-icon {
+    width: 48px;                   /* Tamaño del círculo */
+    height: 48px;
+    background-color: #fff;        /* Color de fondo blanco */
+    border-radius: 50%;            /* Icono circular */
+    display: flex;
+    justify-content: center;       /* Centrar el icono horizontalmente */
+    align-items: center;           /* Centrar el icono verticalmente */
+}
+
+/* Estilo del icono */
+.footer-icon img {
+    width: 32px;                   /* Tamaño del icono dentro del círculo */
+    height: 32px;
+}
+
+
+
+/* Responsivo para 2 imágenes por fila */
+@media (max-width: 1024px) {
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .nav-links {
+        gap: 24px;              /* Reducir el espacio entre enlaces */
+    }
+
+    .nav-links a {
+        font-size: 14px;        /* Reducir el tamaño de la fuente */
+        padding: 8px 12px;      /* Reducir el padding */
+    }
+}
+
+/* Responsivo para 1 imagen por fila */
+@media (max-width: 768px) {
+    .navbar {
+        justify-content: center;
+        display: flex;
+    }
+
+    .nav-links,
+    .nav-icons {
+        display: none;          /* Ocultar enlaces e iconos */
+    }
+
+    .menu-icon {
+        display: block;
+    }
+
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+}
+@media (max-width: 1024px) {
+    .nav-links{
+        display: none;          /* Ocultar enlaces e iconos en pantallas pequeñas */
+    }
+
+    .menu-icon {
+        display: block;         /* Mostrar el icono hamburguesa */
+    }
+}
+/* Galería en versión móvil */
+@media (max-width: 768px) {
+    .gallery {
+        display: grid;                    
+        place-items: center;         /* centrar elemementos dentro de grid */
+        grid-template-columns: 1fr;    /* Una sola columna para móviles */
+        gap: 16px;                     /* Espacio entre los elementos */
+        padding: 16px;                 /* Padding más pequeño para móviles */
+        
+    }
+
+    .gallery-item {
+        width: 60%;
+        text-align: center;
+        border: 1px solid #ffffff;
+        border-radius: 8px;
+        padding: 16px;
+        background-color: #fff;
+    }
+
+    .gallery-item img {
+                       /* Asegurar que la imagen ocupe el ancho completo */
+        height: auto;                  /* Altura automática para mantener la proporción */
+        border-radius: 8px;
+    }
+
+    .item-info {
+        display: flex;
+        justify-content: space-between;
+        font-size: 16px;
+        font-weight: bold;
+        padding: 16px 16px;
+    }
+
+    .footer {
+        flex-direction: column;       /* Apilar los elementos verticalmente */
+        align-items: flex-start;      /* Alinear al inicio */
+        
+    }
+
+    .footer-item {
+        width: 100%;                  /* Cada elemento ocupa el ancho completo */
+        display: flex;
+        justify-content: flex-start;  /* Alinear el contenido a la izquierda */
+        border-bottom: 2px solid #333; /* Línea divisoria entre elementos */
+        padding: 16px 0;
+        margin-right: 32px 16px;
+    }
+
+    .footer-item:last-child {
+        border-bottom: none;          /* Eliminar la línea del último elemento */
+    }
+} 
+
+
